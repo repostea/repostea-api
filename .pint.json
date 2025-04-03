@@ -1,0 +1,14 @@
+{
+    "preset": "laravel",
+    "exclude": [
+        "vendor",
+        "storage",
+        "bootstrap/cache"
+    ],
+    "rules": {
+        "array_syntax": {
+            "syntax": "short"
+        },
+        "braces": true
+    }
+}

@@ -1,0 +1,23 @@
+includes:
+  - ./vendor/larastan/larastan/extension.neon
+  - ./vendor/phpstan/phpstan-strict-rules/rules.neon
+
+parameters:
+  level: 5
+  paths:
+    - app
+    - routes
+  excludePaths:
+    - storage/*
+    - bootstrap/*
+    - tests/*
+  checkFunctionNameCase: true
+  checkMissingCallableSignature: true
+  checkUninitializedProperties: true
+  reportUnmatchedIgnoredErrors: false
+
+  ignoreErrors:
+    - '#Call to an undefined method Illuminate\\Support\\HigherOrderCollectionProxy::.*#'
+    - '#Dynamic call to static method Illuminate\\Database\\Eloquent\\Builder<.*>::.*\(\)#'
+    - '#Construct empty\(\) is not allowed\. Use more strict comparison\.#'
+
