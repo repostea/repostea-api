@@ -122,7 +122,17 @@ php artisan tenant:create "My Tenant Name"
 
 This will generate a UUID and API key for the new tenant.
 
-2. Always push to your `origin`, never to `upstream`.
+---
+
+## Live Demo
+
+Check out the live version of Repostea at [repostea.com](https://repostea.com)
+
+---
+
+## Development Roadmap
+
+You can view our planned features and current development status on our [GitHub Projects board](https://github.com/orgs/repostea/projects/2)
 
 ---
 

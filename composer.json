@@ -1,24 +1,42 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "repostea/repostea-api",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "A modern social link-sharing platform built with Laravel 12.",
     "keywords": [
+        "repostea",
+        "social",
+        "link-sharing",
+        "aggregator",
         "laravel",
-        "framework"
+        "api",
+        "multi-tenant"
     ],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "ARC",
+            "email": "arc-in-tower@pronto.me",
+            "homepage": "https://github.com/repostea"
+        }
+    ],
+    "homepage": "https://repostea.com",
+    "support": {
+        "issues": "https://github.com/repostea/repostea-api/issues",
+        "source": "https://github.com/repostea/repostea-api",
+        "roadmap": "https://github.com/orgs/repostea/projects/2"
+    },
     "require": {
         "php": "^8.2",
         "ext-libxml": "*",
         "ext-simplexml": "*",
+        "ext-openssl": "*",
         "chrome-php/chrome": "^1.13",
         "landrok/activitypub": "^0.7.2",
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
-        "laravel/ui": "^4.6",
-        "ext-openssl": "*"
+        "laravel/ui": "^4.6"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -66,7 +84,25 @@
         ],
         "quality": [
             "./vendor/bin/pint",
-            "phpstan analyse"
+            "./vendor/bin/phpstan analyse"
+        ],
+        "test": [
+            "./vendor/bin/pest"
+        ],
+        "test:coverage": [
+            "./vendor/bin/pest --coverage"
+        ],
+        "format": [
+            "./vendor/bin/pint"
+        ],
+        "analyse": [
+            "./vendor/bin/phpstan analyse"
+        ],
+        "deploy": [
+            "php artisan migrate --force",
+            "php artisan optimize:clear",
+            "php artisan config:cache",
+            "php artisan route:cache"
         ]
     },
     "extra": {

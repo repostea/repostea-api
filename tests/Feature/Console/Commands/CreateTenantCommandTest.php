@@ -22,7 +22,7 @@ class CreateTenantCommandTest extends TestCase
         $this->assertEquals($initialCount + 1, Tenant::count());
 
         $tenant = Tenant::where('name', $tenantName)->first();
-        
+
         $this->assertNotNull($tenant);
         $this->assertEquals($tenantName, $tenant->name);
         $this->assertNotNull($tenant->uuid);
